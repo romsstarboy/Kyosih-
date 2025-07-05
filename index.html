@@ -33,14 +33,22 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 10%;
+      flex-wrap: wrap;
     }
 
     header h1 {
       color: var(--accent);
     }
 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
     nav a {
-      margin-left: 20px;
       color: var(--text-light);
       text-decoration: none;
       font-weight: 500;
@@ -145,19 +153,23 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 15px;
     }
 
     .contact-buttons a {
-      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 160px;
       padding: 12px 20px;
       background: var(--primary);
       color: white;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      display: inline-block;
-      min-width: 160px;
       text-align: center;
+      transition: background 0.3s ease;
     }
 
     .contact-buttons a:hover {
@@ -186,14 +198,6 @@
       .hero-image {
         margin-top: 30px;
       }
-
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        margin-top: 10px;
-      }
     }
   </style>
 </head>
@@ -203,7 +207,7 @@
     <nav>
       <a href="#hero">Beranda</a>
       <a href="#tentang">Tentang</a>
-      <a href="#">Layanan</a>
+      <a href="#layanan">Layanan</a>
       <a href="#kontak">Kontak</a>
     </nav>
   </header>
