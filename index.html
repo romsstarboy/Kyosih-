@@ -25,6 +25,7 @@
       font-family: 'Poppins', sans-serif;
       background: var(--dark-bg);
       color: var(--text-light);
+      overflow-x: hidden;
     }
 
     header {
@@ -32,21 +33,26 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 10%;
+      flex-wrap: wrap;
     }
 
     header h1 {
       color: var(--accent);
     }
 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
     nav a {
-      margin-left: 20px;
       color: var(--text-light);
       text-decoration: none;
       font-weight: 500;
-    }
-
-    nav a:hover {
-      color: var(--accent);
+      cursor: pointer;
     }
 
     .hero {
@@ -84,7 +90,7 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      margin-right: 10px;
+      margin: 10px 10px 0 0;
       cursor: pointer;
       display: inline-block;
     }
@@ -105,6 +111,7 @@
       padding: 60px 10%;
       background: rgba(255, 255, 255, 0.05);
       text-align: center;
+      flex-wrap: wrap;
     }
 
     .stat h3 {
@@ -144,47 +151,35 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
     }
 
     .contact-card {
-      background: #1e293b;
+      background: rgba(255, 255, 255, 0.05);
       padding: 20px;
       border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .contact-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .contact-card i {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: white;
+      text-align: left;
     }
 
     .contact-card h3 {
-      color: var(--accent);
-      margin-bottom: 10px;
+      margin-top: 15px;
+      font-size: 1.2rem;
     }
 
     .contact-card p {
-      font-size: 0.95rem;
-      color: #cbd5e1;
-      margin-bottom: 15px;
+      color: #94a3b8;
+      margin: 10px 0 20px;
     }
 
     .contact-card a {
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 6px;
       background: var(--primary);
       color: white;
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
     }
@@ -197,6 +192,26 @@
       background: #0f172a;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
+
+    @media (max-width: 600px) {
+      .hero-text h2 {
+        font-size: 2rem;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-image {
+        margin-top: 30px;
+      }
+
+      .contact-card a {
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -205,6 +220,7 @@
     <nav>
       <a href="#hero">Beranda</a>
       <a href="#tentang">Tentang</a>
+      <a href="#layanan">Layanan</a>
       <a href="#kontak">Kontak</a>
     </nav>
   </header>
@@ -237,31 +253,31 @@
   </section>
 
   <section id="tentang" class="section">
-    <h2>Membangun <span>Mindset & Strategi</span><br> Trading yang Konsisten dan Teruji</h2>
-    <p>romsstrade adalah platform personal dari seorang trader independen asal Indonesia yang berfokus pada edukasi, sinyal akurat, dan strategi manajemen risiko modern. Kami percaya bahwa disiplin dan pembelajaran jangka panjang adalah kunci profitabilitas di pasar finansial.</p>
+    <h2>Membangun Infrastruktur Trading <span>yang Konsisten dan Teruji</span></h2>
+    <p>romsstrade adalah platform edukasi dan sinyal trading asal Indonesia yang didirikan untuk membantu para trader retail membangun sistem, strategi, dan mindset profesional. Fokus kami adalah membantu Anda mencapai disiplin dan profitabilitas jangka panjang melalui pendekatan modern dan transparan.</p>
   </section>
 
   <section id="kontak" class="section">
     <h2>Hubungi Kami</h2>
-    <p>Pilih cara yang paling nyaman untuk menghubungi kami.</p>
+    <p>Pilih salah satu cara di bawah ini untuk terhubung langsung dengan kami:</p>
     <div class="contact-grid">
       <div class="contact-card">
-        <i class="fab fa-telegram"></i>
+        <i class="fab fa-telegram fa-2x"></i>
         <h3>Telegram</h3>
-        <p>Pesan cepat & dukungan via channel Telegram.</p>
-        <a href="https://t.me/romstrader" target="_blank">Buka Telegram</a>
+        <p>Gabung ke channel sinyal harian dan diskusi langsung.</p>
+        <a href="https://t.me/romstrader">Buka Telegram</a>
       </div>
       <div class="contact-card">
-        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp fa-2x"></i>
         <h3>WhatsApp</h3>
-        <p>Chat langsung dengan tim romsstrade untuk konsultasi.</p>
-        <a href="https://wa.me/6287856077120" target="_blank">Buka WhatsApp</a>
+        <p>Hubungi admin langsung untuk tanya-jawab dan konsultasi cepat.</p>
+        <a href="https://wa.me/6287856077120">Buka WhatsApp</a>
       </div>
       <div class="contact-card">
-        <i class="fas fa-envelope"></i>
-        <h3>Email</h3>
-        <p>Korespondensi profesional via email.</p>
-        <a href="mailto:romsstarboy@gmail.com">Kirim Email</a>
+        <i class="fab fa-instagram fa-2x"></i>
+        <h3>Instagram</h3>
+        <p>Lihat konten, story, dan info terbaru seputar trading.</p>
+        <a href="https://instagram.com/_rommms">Buka Instagram</a>
       </div>
     </div>
   </section>
