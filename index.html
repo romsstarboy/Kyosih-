@@ -55,6 +55,10 @@
       cursor: pointer;
     }
 
+    nav a:hover {
+      color: var(--accent);
+    }
+
     .hero {
       display: flex;
       align-items: center;
@@ -151,24 +155,25 @@
 
     .contact-buttons {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 15px;
+      max-width: 400px;
+      margin: 0 auto;
     }
 
     .contact-buttons a {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-width: 160px;
       padding: 12px 20px;
       background: var(--primary);
       color: white;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      text-align: center;
       transition: background 0.3s ease;
     }
 
