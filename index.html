@@ -25,7 +25,6 @@
       font-family: 'Poppins', sans-serif;
       background: var(--dark-bg);
       color: var(--text-light);
-      overflow-x: hidden;
     }
 
     header {
@@ -33,26 +32,17 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 10%;
-      flex-wrap: wrap;
     }
 
     header h1 {
       color: var(--accent);
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 10px;
-    }
-
     nav a {
+      margin-left: 20px;
       color: var(--text-light);
       text-decoration: none;
       font-weight: 500;
-      cursor: pointer;
     }
 
     nav a:hover {
@@ -94,7 +84,7 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      margin: 10px 10px 0 0;
+      margin-right: 10px;
       cursor: pointer;
       display: inline-block;
     }
@@ -115,7 +105,6 @@
       padding: 60px 10%;
       background: rgba(255, 255, 255, 0.05);
       text-align: center;
-      flex-wrap: wrap;
     }
 
     .stat h3 {
@@ -153,32 +142,51 @@
       margin: 0 auto 30px;
     }
 
-    .contact-buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      max-width: 400px;
-      margin: 0 auto;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
 
-    .contact-buttons a {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 20px;
+    .contact-card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-card i {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .contact-card h3 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      margin-bottom: 15px;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 6px;
       background: var(--primary);
       color: white;
-      border-radius: 8px;
-      text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .contact-buttons a:hover {
-      background: #12823b;
+      text-decoration: none;
     }
 
     .footer {
@@ -189,21 +197,6 @@
       background: #0f172a;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
-
-    @media (max-width: 600px) {
-      .hero-text h2 {
-        font-size: 2.2rem;
-      }
-
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-image {
-        margin-top: 30px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -212,7 +205,6 @@
     <nav>
       <a href="#hero">Beranda</a>
       <a href="#tentang">Tentang</a>
-      <a href="#layanan">Layanan</a>
       <a href="#kontak">Kontak</a>
     </nav>
   </header>
@@ -250,12 +242,27 @@
   </section>
 
   <section id="kontak" class="section">
-    <h2>Kontak</h2>
-    <p>Silakan hubungi saya melalui tombol di bawah ini:</p>
-    <div class="contact-buttons">
-      <a href="https://t.me/romstrader"><i class="fab fa-telegram"></i> Telegram</a>
-      <a href="https://instagram.com/_rommms"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="https://wa.me/6287856077120"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <h2>Hubungi Kami</h2>
+    <p>Pilih cara yang paling nyaman untuk menghubungi kami.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fab fa-telegram"></i>
+        <h3>Telegram</h3>
+        <p>Pesan cepat & dukungan via channel Telegram.</p>
+        <a href="https://t.me/romstrader" target="_blank">Buka Telegram</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <p>Chat langsung dengan tim romsstrade untuk konsultasi.</p>
+        <a href="https://wa.me/6287856077120" target="_blank">Buka WhatsApp</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>Korespondensi profesional via email.</p>
+        <a href="mailto:romsstarboy@gmail.com">Kirim Email</a>
+      </div>
     </div>
   </section>
 
