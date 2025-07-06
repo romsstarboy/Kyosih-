@@ -1,256 +1,108 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>romsstrade - Trader Profesional</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    :root {
-      --primary: #16a34a;
-      --dark-bg: linear-gradient(135deg, #0f172a, #111827);
-      --text-light: #f1f5f9;
-      --accent: #facc15;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--dark-bg);
-      color: var(--text-light);
-      overflow-x: hidden;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 10%;
-      flex-wrap: wrap;
-    }
-
-    header h1 {
-      color: var(--accent);
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 500;
-      cursor: pointer;
-    }
-
-    .candle-btn {
-      background: var(--accent);
-      color: black;
-      border: none;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    .candle-btn:hover {
-      background: #fcd34d;
-    }
-
-    .candle-btn svg {
-      stroke: black;
-    }
-
-    .section {
-      padding: 60px 10%;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      line-height: 1.3;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-
-    .section h2 span {
-      color: var(--accent);
-    }
-
-    .section p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #d1d5db;
-      max-width: 800px;
-      margin: 0 auto 30px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .contact-card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 12px;
-      text-align: left;
-    }
-
-    .contact-card h3 {
-      margin-top: 15px;
-      font-size: 1.2rem;
-    }
-
-    .contact-card p {
-      color: #94a3b8;
-      margin: 10px 0 20px;
-    }
-
-    .contact-card a {
-      background: var(--primary);
-      color: white;
-      padding: 10px 20px;
-      display: inline-block;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: #64748b;
-      background: #0f172a;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    #tradingview-widget {
-      height: 500px;
-      max-width: 100%;
-      min-height: 400px;
-    }
-
-    @media (max-width: 768px) {
-      #tradingview-widget {
-        height: 400px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layanan - romsstrade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background: radial-gradient(circle at center, #111827, #0f172a),
+          url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* bisa diganti ke chart */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
       }
+    </style>
+  </head>
+  <body class="font-sans text-white overflow-x-hidden">
+    <!-- Header -->
+    <header class="flex justify-between items-center px-6 md:px-16 py-6 bg-[#0f172a]">
+      <h1 class="text-xl font-bold text-yellow-400">romsstrade</h1>
+      <nav class="space-x-6 text-sm">
+        <a href="/" class="hover:text-yellow-400">Beranda</a>
+        <a href="/about" class="hover:text-yellow-400">Tentang</a>
+        <a href="/services" class="text-yellow-400 font-semibold">Layanan</a>
+        <a href="/kontak" class="hover:text-yellow-400">Kontak</a>
+      </nav>
+    </header>
 
-      .candle-btn {
-        font-size: 12px;
-        padding: 8px 12px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>romsstrade</h1>
-    <nav>
-      <a href="#hero">Beranda</a>
-      <a href="#tentang">Tentang</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#kontak">Kontak</a>
-      <button class="candle-btn" onclick="scrollToChart()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="20" x2="18" y2="10" />
-          <line x1="12" y1="20" x2="12" y2="4" />
-          <line x1="6" y1="20" x2="6" y2="14" />
-        </svg>
-        <span>Chart Live</span>
-      </button>
-    </nav>
-  </header>
+    <!-- Hero -->
+    <section class="text-center py-24 px-6 md:px-16">
+      <h2 class="text-4xl md:text-5xl font-extrabold">
+        Alam Semesta <span class="bg-gradient-to-r from-yellow-400 to-pink-500 bg-clip-text text-transparent">Kami</span>
+      </h2>
+      <p class="text-slate-300 mt-4 text-lg max-w-2xl mx-auto">
+        Masuki kosmos layanan kami — tempat semua fitur trading saling terhubung dan saling menguatkan.
+      </p>
+    </section>
 
-  <!-- Konten lainnya... -->
-
-  <section id="kontak" class="section">
-    <h2>Hubungi Kami</h2>
-    <p>Pilih salah satu cara di bawah ini untuk terhubung langsung dengan kami:</p>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <i class="fab fa-telegram fa-2x"></i>
-        <h3>Telegram</h3>
-        <p>Gabung ke channel sinyal harian dan diskusi langsung.</p>
-        <a href="https://t.me/romstrader">Buka Telegram</a>
+    <!-- Layanan Orbit -->
+    <section class="relative max-w-6xl mx-auto min-h-[600px] hidden md:block">
+      <!-- Pusat -->
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-yellow-400 text-black font-bold rounded-full w-24 h-24 flex items-center justify-center text-lg shadow-xl">
+        RS
       </div>
-      <div class="contact-card">
-        <i class="fab fa-whatsapp fa-2x"></i>
-        <h3>WhatsApp</h3>
-        <p>Hubungi admin langsung untuk tanya-jawab dan konsultasi cepat.</p>
-        <a href="https://wa.me/6287856077120">Buka WhatsApp</a>
+
+      <!-- Card 1 -->
+      <div class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-slate-800 p-6 rounded-xl w-60 shadow-lg">
+        <h3 class="text-yellow-400 font-semibold mb-2">Mentoring</h3>
+        <p class="text-slate-300 text-sm">1-on-1 coaching sistem & psikologi trading.</p>
       </div>
-      <div class="contact-card">
-        <i class="fab fa-instagram fa-2x"></i>
-        <h3>Instagram</h3>
-        <p>Lihat konten, story, dan info terbaru seputar trading.</p>
-        <a href="https://instagram.com/_rommms">Buka Instagram</a>
+
+      <!-- Card 2 -->
+      <div class="absolute top-1/4 right-0 bg-slate-800 p-6 rounded-xl w-60 shadow-lg">
+        <h3 class="text-green-300 font-semibold mb-2">Sinyal Harian</h3>
+        <p class="text-slate-300 text-sm">Update pair potensial via Telegram.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Bagian chart yang dipindahkan ke bawah -->
-  <section id="chart-live" class="section">
-    <h2>Lihat <span>Chart Market Live</span></h2>
-    <div id="tradingview-widget" style="margin-top: 20px;"></div>
-  </section>
+      <!-- Card 3 -->
+      <div class="absolute bottom-1/4 right-10 bg-slate-800 p-6 rounded-xl w-60 shadow-lg">
+        <h3 class="text-blue-300 font-semibold mb-2">Live Trading</h3>
+        <p class="text-slate-300 text-sm">Sesi Zoom bareng tim trading.</p>
+      </div>
 
-  <div class="footer">
-    &copy; 2025 romsstrade. All rights reserved.
-  </div>
+      <!-- Card 4 -->
+      <div class="absolute bottom-1/4 left-10 bg-slate-800 p-6 rounded-xl w-60 shadow-lg">
+        <h3 class="text-rose-300 font-semibold mb-2">EduAkademi</h3>
+        <p class="text-slate-300 text-sm">Kursus dari basic hingga advance.</p>
+      </div>
 
-  <!-- TradingView Script -->
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script>
-    let chartLoaded = false;
-    function scrollToChart() {
-      const chartSection = document.getElementById("chart-live");
-      chartSection.scrollIntoView({ behavior: "smooth" });
+      <!-- Card 5 -->
+      <div class="absolute top-1/4 left-0 bg-slate-800 p-6 rounded-xl w-60 shadow-lg">
+        <h3 class="text-pink-300 font-semibold mb-2">Tools & PDF</h3>
+        <p class="text-slate-300 text-sm">eBook, checklist & template risiko.</p>
+      </div>
+    </section>
 
-      if (!chartLoaded) {
-        new TradingView.widget({
-          container_id: "tradingview-widget",
-          autosize: true,
-          symbol: "BINANCE:BTCUSDT",
-          interval: "30",
-          timezone: "Asia/Jakarta",
-          theme: "dark",
-          style: "1",
-          locale: "id",
-          toolbar_bg: "#111827",
-          enable_publishing: false,
-          hide_top_toolbar: false,
-          hide_legend: false,
-          save_image: false,
-          studies: ["MACD@tv-basicstudies"],
-        });
-        chartLoaded = true;
-      }
-    }
-  </script>
-</body>
+    <!-- Mobile grid -->
+    <section class="md:hidden px-6 py-12 grid grid-cols-1 gap-6">
+      <!-- Cards untuk mobile -->
+      <div class="bg-slate-800 p-5 rounded-xl shadow-md">
+        <h3 class="text-yellow-400 font-semibold mb-2">Mentoring</h3>
+        <p class="text-slate-300 text-sm">1-on-1 coaching sistem & psikologi trading.</p>
+      </div>
+      <div class="bg-slate-800 p-5 rounded-xl shadow-md">
+        <h3 class="text-green-300 font-semibold mb-2">Sinyal Harian</h3>
+        <p class="text-slate-300 text-sm">Update pair potensial via Telegram.</p>
+      </div>
+      <div class="bg-slate-800 p-5 rounded-xl shadow-md">
+        <h3 class="text-blue-300 font-semibold mb-2">Live Trading</h3>
+        <p class="text-slate-300 text-sm">Sesi Zoom bareng tim trading.</p>
+      </div>
+      <div class="bg-slate-800 p-5 rounded-xl shadow-md">
+        <h3 class="text-rose-300 font-semibold mb-2">EduAkademi</h3>
+        <p class="text-slate-300 text-sm">Kursus dari basic hingga advance.</p>
+      </div>
+      <div class="bg-slate-800 p-5 rounded-xl shadow-md">
+        <h3 class="text-pink-300 font-semibold mb-2">Tools & PDF</h3>
+        <p class="text-slate-300 text-sm">eBook, checklist & template risiko.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-sm text-slate-500 border-t border-slate-700 mt-10">
+      &copy; 2025 romsstrade. All rights reserved.
+    </footer>
+  </body>
 </html>
