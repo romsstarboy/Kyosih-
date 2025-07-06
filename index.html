@@ -81,6 +81,11 @@
       transition: background 0.3s;
     }
 
+    .trading-btn img {
+      width: 20px;
+      height: 20px;
+    }
+
     .trading-btn:hover {
       background: #fcd34d;
     }
@@ -223,6 +228,122 @@
   </style>
 </head>
 <body>
-<!-- ...konten tetap sama seperti sebelumnya... -->
+  <header>
+    <h1>romsstrade</h1>
+    <nav>
+      <a href="#hero">Beranda</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#kontak">Kontak</a>
+      <button class="trading-btn" onclick="toggleChart()">
+        <img src="https://images.unsplash.com/photo-1638296931636-d264137ba7c3?crop=entropy&cs=tinysrgb&fit=crop&h=32&w=32" alt="Chart Icon">
+        Chart Live
+      </button>
+    </nav>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="hero-text">
+      <h2>Bangun <span>Konsistensi</span><br> Tradingmu Hari Ini</h2>
+      <p>Trading profesional bukan soal keberuntungan, tapi sistem. romsstrade hadir sebagai partner edukasi dan sinyal harian sejak 2019.</p>
+      <a href="https://t.me/romstrader" class="btn">Gabung Sinyal</a>
+      <a href="https://t.me/Kyosih" class="btn alt">Kontak Admin</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/2972/2972506.png" alt="Trading Illustration" />
+    </div>
+  </section>
+
+  <section class="section" id="tentang">
+    <h2>Tentang <span>romsstrade</span></h2>
+    <p>romsstrade adalah platform edukasi dan layanan sinyal yang membantu trader pemula hingga lanjutan membangun sistem yang konsisten, realistis, dan profitable. Didesain oleh trader aktif sejak 2019, kami percaya kesuksesan dalam trading dibangun lewat edukasi berkelanjutan dan komunitas yang solid.</p>
+  </section>
+
+  <section class="section" id="layanan">
+    <h2>Layanan <span>Unggulan</span></h2>
+    <p>Kami menyediakan layanan komprehensif yang menggabungkan edukasi, praktik, dan komunitas:</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Private Mentoring</h3>
+        <p>Sesi 1-on-1 langsung untuk membangun sistem trading pribadi berdasarkan kepribadian dan tujuan finansial Anda.</p>
+      </div>
+      <div class="service-card">
+        <h3>Sinyal Harian</h3>
+        <p>Analisa dan rekomendasi entry harian dari pasar crypto dan forex, dikirim melalui Telegram.</p>
+      </div>
+      <div class="service-card">
+        <h3>Live Trading Room</h3>
+        <p>Sesi live via Zoom setiap minggu untuk diskusi market dan praktik langsung bareng tim romsstrade.</p>
+      </div>
+      <div class="service-card">
+        <h3>EduAkademi</h3>
+        <p>Modul video intensif dan webinar tentang strategi, risk management, dan mindset trading.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="chart-section" style="display:none;">
+    <h2>Grafik <span>Live Market</span></h2>
+    <div id="tradingview-widget" style="margin-top: 20px;"></div>
+  </section>
+
+  <section class="section" id="kontak">
+    <h2>Hubungi <span>Kami</span></h2>
+    <p>Terhubung langsung dengan admin untuk konsultasi, tanya jawab, atau pendaftaran program.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fab fa-telegram fa-2x"></i>
+        <h3>Telegram</h3>
+        <p>Klik untuk bicara langsung dengan admin di Telegram.</p>
+        <a href="https://t.me/Kyosih">@Kyosih</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-whatsapp fa-2x"></i>
+        <h3>WhatsApp</h3>
+        <p>Chat langsung untuk info lebih lanjut dan fast response.</p>
+        <a href="https://wa.me/6287856077120">Hubungi via WA</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-instagram fa-2x"></i>
+        <h3>Instagram</h3>
+        <p>Ikuti update, tips, dan story edukatif tiap hari.</p>
+        <a href="https://instagram.com/_rommms">@_rommms</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    &copy; 2025 romsstrade. All rights reserved.
+  </div>
+
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script>
+    let chartLoaded = false;
+    function toggleChart() {
+      const section = document.getElementById('chart-section');
+      section.style.display = (section.style.display === 'none') ? 'block' : 'none';
+      window.scrollTo({ top: section.offsetTop, behavior: 'smooth' });
+
+      if (!chartLoaded) {
+        new TradingView.widget({
+          container_id: "tradingview-widget",
+          autosize: true,
+          symbol: "BINANCE:BTCUSDT",
+          interval: "30",
+          timezone: "Asia/Jakarta",
+          theme: "dark",
+          style: "1",
+          locale: "id",
+          toolbar_bg: "#111827",
+          enable_publishing: false,
+          hide_top_toolbar: false,
+          hide_legend: false,
+          save_image: false,
+          studies: ["MACD@tv-basicstudies"]
+        });
+        chartLoaded = true;
+      }
+    }
+  </script>
 </body>
 </html>
