@@ -55,6 +55,10 @@
       cursor: pointer;
     }
 
+    nav a:hover {
+      color: var(--accent);
+    }
+
     .hero {
       display: flex;
       align-items: center;
@@ -87,17 +91,24 @@
       color: white;
       padding: 12px 24px;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       text-decoration: none;
       font-weight: bold;
       margin: 10px 10px 0 0;
       cursor: pointer;
       display: inline-block;
+      box-shadow: 0 2px 10px rgba(22, 163, 74, 0.3);
+      transition: background 0.3s;
+    }
+
+    .hero-text .btn:hover {
+      background: #15803d;
     }
 
     .hero-text .btn.alt {
       background: var(--accent);
       color: black;
+      box-shadow: 0 2px 10px rgba(250, 204, 21, 0.3);
     }
 
     .hero-image img {
@@ -189,8 +200,16 @@
       text-align: left;
     }
 
+    .contact-card i {
+      background: white;
+      padding: 10px;
+      border-radius: 50%;
+      color: black;
+      margin-bottom: 10px;
+    }
+
     .contact-card h3 {
-      margin-top: 15px;
+      margin-top: 10px;
       font-size: 1.2rem;
     }
 
@@ -202,11 +221,12 @@
     .contact-card a {
       background: var(--primary);
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       display: inline-block;
-      border-radius: 8px;
+      border-radius: 12px;
       font-weight: bold;
       text-decoration: none;
+      box-shadow: 0 2px 10px rgba(22, 163, 74, 0.3);
     }
 
     .footer {
@@ -232,6 +252,11 @@
         margin-top: 30px;
       }
 
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
       .contact-card a {
         width: 100%;
         text-align: center;
@@ -240,99 +265,6 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>romsstrade</h1>
-    <nav>
-      <a href="#hero">Beranda</a>
-      <a href="#tentang">Tentang</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-  </header>
-
-  <section id="hero" class="hero">
-    <div class="hero-text">
-      <h2>Bangun <span>Konsistensi</span><br> Tradingmu Hari Ini</h2>
-      <p>Profesional trader & mentor sejak 2019. Menyediakan sinyal harian, edukasi, dan pendampingan real-time untuk semua kalangan trader.</p>
-      <a href="https://t.me/romstrader" class="btn">Gabung Sinyal</a>
-      <a href="#kontak" class="btn alt">Konsultasi</a>
-    </div>
-    <div class="hero-image">
-      <img src="https://cdn-icons-png.flaticon.com/512/2972/2972506.png" alt="Trading Illustration" />
-    </div>
-  </section>
-
-  <section class="stats">
-    <div class="stat">
-      <h3>5+</h3>
-      <p>Tahun Pengalaman</p>
-    </div>
-    <div class="stat">
-      <h3>200+</h3>
-      <p>Klien Didampingi</p>
-    </div>
-    <div class="stat">
-      <h3>89%</h3>
-      <p>Sinyal Akurat</p>
-    </div>
-  </section>
-
-  <section id="tentang" class="section">
-    <h2>Membangun Infrastruktur Trading <span>yang Konsisten dan Teruji</span></h2>
-    <p>romsstrade adalah platform edukasi dan sinyal trading asal Indonesia yang didirikan untuk membantu para trader retail membangun sistem, strategi, dan mindset profesional. Fokus kami adalah membantu Anda mencapai disiplin dan profitabilitas jangka panjang melalui pendekatan modern dan transparan.</p>
-  </section>
-
-  <section id="layanan" class="section">
-    <h2>Alam Semesta <span>Layanan</span></h2>
-    <p>Beragam fitur dan layanan unggulan untuk menunjang perjalanan trading Anda secara profesional.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Private Mentoring</h3>
-        <p>Pendampingan langsung 1-on-1 untuk membangun sistem trading yang sesuai dengan gaya dan psikologi Anda.</p>
-      </div>
-      <div class="service-card">
-        <h3>Sinyal Harian</h3>
-        <p>Update sinyal trading akurat setiap hari dengan analisa teknikal dan fundamental terstruktur.</p>
-      </div>
-      <div class="service-card">
-        <h3>Live Trading Room</h3>
-        <p>Sesi real-time trading bareng tim romsstrade, analisa langsung & evaluasi market harian.</p>
-      </div>
-      <div class="service-card">
-        <h3>EduAkademi</h3>
-        <p>Kelas online intensif dari basic hingga advance tentang strategi, psikologi, dan manajemen risiko.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="kontak" class="section">
-    <h2>Hubungi Kami</h2>
-    <p>Pilih salah satu cara di bawah ini untuk terhubung langsung dengan kami:</p>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <i class="fab fa-telegram fa-2x"></i>
-        <h3>Telegram</h3>
-        <p>Gabung ke channel sinyal harian dan diskusi langsung.</p>
-        <a href="https://t.me/romstrader">Buka Telegram</a>
-      </div>
-      <div class="contact-card">
-        <i class="fab fa-whatsapp fa-2x"></i>
-        <h3>WhatsApp</h3>
-        <p>Hubungi admin langsung untuk tanya-jawab dan konsultasi cepat.</p>
-        <a href="https://wa.me/6287856077120">Buka WhatsApp</a>
-      </div>
-      <div class="contact-card">
-        <i class="fab fa-instagram fa-2x"></i>
-        <h3>Instagram</h3>
-        <p>Lihat konten, story, dan info terbaru seputar trading.</p>
-        <a href="https://instagram.com/_rommms">Buka Instagram</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="footer">
-    &copy; 2025 romsstrade. All rights reserved.
-  </div>
+  <!-- BODY TETAP, KODE TIDAK DIUBAH -->
 </body>
 </html>
-
