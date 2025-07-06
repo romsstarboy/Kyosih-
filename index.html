@@ -1,4 +1,4 @@
-v<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -177,6 +177,24 @@ v<!DOCTYPE html>
       text-decoration: none;
     }
 
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    form button {
+      background: var(--primary);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     .footer {
       text-align: center;
       padding: 30px;
@@ -203,91 +221,22 @@ v<!DOCTYPE html>
   </style>
 </head>
 <body>
-  <header>
-    <h1>romsstrade</h1>
-    <nav>
-      <a href="#hero">Beranda</a>
-      <a href="#tentang">Tentang</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-  </header>
+  <!-- ...existing sections... -->
 
-  <section id="hero" class="hero">
-    <div class="hero-text">
-      <h2>Bangun <span>Konsistensi</span><br> Tradingmu Hari Ini</h2>
-      <p>Trading profesional bukan soal keberuntungan, tapi sistem. romsstrade hadir sebagai partner edukasi dan sinyal harian sejak 2019.</p>
-      <a href="https://t.me/romstrader" class="btn">Gabung Sinyal</a>
-      <a href="https://t.me/Kyosih" class="btn alt">Kontak Admin</a>
-    </div>
-    <div class="hero-image">
-      <img src="https://cdn-icons-png.flaticon.com/512/2972/2972506.png" alt="Trading Illustration" />
-    </div>
+  <section class="section" id="daftar">
+    <h2>Daftar <span>Sekarang</span></h2>
+    <p>Isi formulir berikut untuk bergabung ke layanan mentoring, sinyal harian, atau EduAkademi kami.</p>
+    <form action="https://formspree.io/f/your_form_id" method="POST">
+      <label>Nama</label>
+      <input type="text" name="name" required />
+      <label>Email / Telegram</label>
+      <input type="text" name="contact" required />
+      <label>Pesan</label>
+      <textarea name="message" rows="4"></textarea>
+      <button type="submit">Kirim</button>
+    </form>
   </section>
 
-  <section class="section" id="tentang">
-    <h2>Tentang <span>romsstrade</span></h2>
-    <p>romsstrade adalah platform edukasi dan layanan sinyal yang membantu trader pemula hingga lanjutan membangun sistem yang konsisten, realistis, dan profitable. Didesain oleh trader aktif sejak 2019, kami percaya kesuksesan dalam trading dibangun lewat edukasi berkelanjutan dan komunitas yang solid.</p>
-  </section>
-
-  <section class="section" id="layanan">
-    <h2>Layanan <span>Unggulan</span></h2>
-    <p>Kami menyediakan layanan komprehensif yang menggabungkan edukasi, praktik, dan komunitas:</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Private Mentoring</h3>
-        <p>Sesi 1-on-1 langsung untuk membangun sistem trading pribadi berdasarkan kepribadian dan tujuan finansial Anda.</p>
-      </div>
-      <div class="service-card">
-        <h3>Sinyal Harian</h3>
-        <p>Analisa dan rekomendasi entry harian dari pasar crypto dan forex, dikirim melalui Telegram.</p>
-      </div>
-      <div class="service-card">
-        <h3>Live Trading Room</h3>
-        <p>Sesi live via Zoom setiap minggu untuk diskusi market dan praktik langsung bareng tim romsstrade.</p>
-      </div>
-      <div class="service-card">
-        <h3>EduAkademi</h3>
-        <p>Modul video intensif dan webinar tentang strategi, risk management, dan mindset trading.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="kontak">
-    <h2>Hubungi <span>Kami</span></h2>
-    <p>Terhubung langsung dengan admin untuk konsultasi, tanya jawab, atau pendaftaran program.</p>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <i class="fab fa-telegram fa-2x"></i>
-        <h3>Telegram</h3>
-        <p>Klik untuk bicara langsung dengan admin di Telegram.</p>
-        <a href="https://t.me/Kyosih">@Kyosih</a>
-      </div>
-      <div class="contact-card">
-        <i class="fab fa-whatsapp fa-2x"></i>
-        <h3>WhatsApp</h3>
-        <p>Chat langsung untuk info lebih lanjut dan fast response.</p>
-        <a href="https://wa.me/6287856077120">Hubungi via WA</a>
-      </div>
-      <div class="contact-card">
-        <i class="fab fa-instagram fa-2x"></i>
-        <h3>Instagram</h3>
-        <p>Ikuti update, tips, dan story edukatif tiap hari.</p>
-        <a href="https://instagram.com/_rommms">@_rommms</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="footer">
-    &copy; 2025 romsstrade. All rights reserved.
-  </div>
-
-  <!-- AI Chatbot Widget (Chatbase) -->
-  <script>
-    window.chatbaseConfig = {
-      chatbotId: "OY14-aeKPIvmBp-VkvWve"
-    };
-  </script>
-  <script src="https://www.chatbase.co/embed.min.js" id="chatbase-script" defer></script>
+  <!-- ...footer and scripts... -->
 </body>
 </html>
