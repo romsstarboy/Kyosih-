@@ -3,316 +3,192 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>romsstrade - Trader Profesional</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Layanan Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #6b7280;
-      --dark-bg: linear-gradient(135deg, #1f2937, #111827);
-      --text-light: #f3f4f6;
-      --accent: #facc15;
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
+      font-family: 'Outfit', sans-serif;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--dark-bg);
-      color: var(--text-light);
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    #tsparticles {
-      position: fixed;
-      z-index: -1;
-      width: 100%;
+    body, html {
       height: 100%;
+      background-color: #1e1e1e;
+      color: #fff;
     }
 
     header {
+      position: relative;
+      z-index: 2;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 10%;
-      flex-wrap: wrap;
-      background: #1f2937;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 20px 40px;
+      background-color: #2b2b2b;
     }
 
-    header h1 {
-      color: var(--accent);
-      font-weight: bold;
+    .logo {
       font-size: 1.5rem;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
+      font-weight: 800;
+      color: #FFD700;
     }
 
     nav a {
-      color: var(--text-light);
+      margin: 0 15px;
       text-decoration: none;
+      color: #ddd;
       font-weight: 500;
+      transition: color 0.3s;
     }
 
-    .trading-btn {
-      background: var(--accent);
-      color: black;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 14px;
+    nav a:hover {
+      color: #FFD700;
+    }
+
+    .lang-switch {
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-    }
-
-    .trading-btn:hover {
-      background: #fcd34d;
+      background-color: #444;
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 0.9rem;
     }
 
     .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 100px 10%;
-      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 100px 20px;
     }
 
-    .hero-text {
-      max-width: 500px;
-    }
-
-    .hero-text h2 {
+    .hero h1 {
       font-size: 3rem;
-      color: white;
-    }
-
-    .hero-text h2 span {
-      color: var(--accent);
-    }
-
-    .hero-text p {
-      margin: 20px 0;
-      line-height: 1.6;
-      color: #d1d5db;
-    }
-
-    .hero-text .btn {
-      background: var(--primary);
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 10px 10px 0 0;
-      cursor: pointer;
-      display: inline-block;
-      transition: transform 0.3s ease;
-    }
-
-    .hero-text .btn:hover {
-      transform: scale(1.05);
-    }
-
-    .hero-text .btn.alt {
-      background: var(--accent);
-      color: black;
-    }
-
-    .hero-image img {
-      width: 380px;
-      max-width: 100%;
-    }
-
-    .section {
-      padding: 60px 10%;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
+      font-weight: 900;
       color: #fff;
-      margin-bottom: 20px;
     }
 
-    .section h2 span {
-      color: var(--accent);
+    .hero span {
+      color: #FFD700;
     }
 
-    .section p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #d1d5db;
-      max-width: 800px;
-      margin: 0 auto 30px;
+    .hero p {
+      margin-top: 20px;
+      color: #ccc;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1rem;
     }
 
-    .contact-grid, .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .contact-card, .service-card {
-      background: rgba(255, 255, 255, 0.04);
-      padding: 20px;
-      border-radius: 12px;
-      text-align: left;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .contact-card h3, .service-card h3 {
-      margin-top: 10px;
-      color: var(--accent);
-      font-size: 1.2rem;
-    }
-
-    .contact-card p, .service-card p {
-      color: #94a3b8;
-      margin: 10px 0 20px;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .contact-card a {
-      background: var(--primary);
-      color: white;
-      padding: 10px 20px;
-      display: inline-block;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: #94a3b8;
-      background: #1f2937;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    #languageSwitch {
-      margin-left: 12px;
-      padding: 4px;
-      border-radius: 4px;
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
     }
 
     @media (max-width: 768px) {
-      .hero {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        display: flex;
         flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-text h2 {
-        font-size: 2rem;
-      }
-
-      .hero-image {
-        margin-top: 30px;
+        gap: 8px;
+        align-items: center;
       }
     }
   </style>
 </head>
 <body>
-
-  <div id="tsparticles"></div>
+  <div id="particles-js"></div>
 
   <header>
-    <h1>romsstrade</h1>
+    <div class="logo">Kyoken ID</div>
     <nav>
-      <a href="#hero">Beranda</a>
-      <a href="#tentang">Tentang</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#kontak">Kontak</a>
-      <select id="languageSwitch">
-        <option value="id">🇮🇩</option>
-        <option value="en">🇬🇧</option>
-      </select>
-      <button class="trading-btn">
-        <i class="fas fa-chart-line"></i>
-        Chart Live
-      </button>
+      <a href="#">Beranda</a>
+      <a href="#">Tentang</a>
+      <a href="#">Layanan</a>
+      <a href="#">Kontak</a>
     </nav>
+    <div class="lang-switch" onclick="switchLang()">🇮🇩 ID</div>
   </header>
 
-  <section id="hero" class="hero">
-    <div class="hero-text">
-      <h2 id="heroTitle">Bangun <span>Konsistensi</span><br> Tradingmu Hari Ini</h2>
-      <p id="heroDesc">Kami bantu kamu membangun sistem trading yang disiplin, profitable, dan tahan banting — dari sinyal harian hingga mentoring personal.</p>
-      <a href="https://t.me/romstrader" class="btn">Gabung Channel</a>
-      <a href="#kontak" class="btn alt">Konsultasi Gratis</a>
-    </div>
-    <div class="hero-image">
-      <img src="https://cdn-icons-png.flaticon.com/512/2972/2972506.png" alt="Trading Illustration" />
-    </div>
+  <section class="hero">
+    <h1><span>Layanan Digital</span> yang Komprehensif</h1>
+    <p id="desc">
+      Temukan rangkaian solusi digital modern kami yang dirancang untuk memberdayakan para pengembang dan bisnis di seluruh Asia Tenggara dengan teknologi canggih dan infrastruktur yang andal.
+    </p>
   </section>
 
-  <!-- (Lanjutkan bagian Tentang, Layanan, dan Kontak seperti sebelumnya) -->
-
-  <div class="footer">
-    &copy; 2025 romsstrade. All rights reserved.
-  </div>
-
-  <!-- Partikel background -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <!-- Particles.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    tsParticles.load("tsparticles", {
-      fullScreen: { enable: false },
-      background: { color: "#1f2937" },
+    particlesJS("particles-js", {
       particles: {
-        number: { value: 45 },
+        number: { value: 60 },
         color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.3 },
-        size: { value: 2 },
-        move: { enable: true, speed: 0.5 }
-      }
+        shape: {
+          type: "circle",
+          stroke: { width: 0, color: "#000000" },
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+        },
+        size: {
+          value: 3,
+          random: true,
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+        },
+        modes: {
+          grab: { distance: 100, line_linked: { opacity: 0.5 } },
+          push: { particles_nb: 4 },
+        }
+      },
+      retina_detect: true
     });
   </script>
 
-  <!-- Bahasa switch -->
   <script>
-    const translations = {
-      id: {
-        heroTitle: "Bangun Konsistensi Tradingmu Hari Ini",
-        heroDesc: "Kami bantu kamu membangun sistem trading yang disiplin, profitable, dan tahan banting — dari sinyal harian hingga mentoring personal."
-      },
-      en: {
-        heroTitle: "Build Your Trading Consistency Today",
-        heroDesc: "We help you build a disciplined, profitable, and resilient trading system — from daily signals to personal mentoring."
-      }
-    };
+    let langID = true;
+    function switchLang() {
+      const desc = document.getElementById("desc");
+      const langSwitch = document.querySelector(".lang-switch");
 
-    document.getElementById("languageSwitch").addEventListener("change", function () {
-      const lang = this.value;
-      document.getElementById("heroTitle").innerHTML = translations[lang].heroTitle;
-      document.getElementById("heroDesc").innerText = translations[lang].heroDesc;
-    });
+      if (langID) {
+        // switch to English
+        document.querySelector(".hero h1").innerHTML = "<span>Comprehensive</span> Digital Services";
+        desc.innerText = "Discover our modern digital solutions designed to empower developers and businesses across Southeast Asia with advanced technology and reliable infrastructure.";
+        langSwitch.innerText = "🇬🇧 EN";
+      } else {
+        // switch to Indonesian
+        document.querySelector(".hero h1").innerHTML = "<span>Layanan Digital</span> yang Komprehensif";
+        desc.innerText = "Temukan rangkaian solusi digital modern kami yang dirancang untuk memberdayakan para pengembang dan bisnis di seluruh Asia Tenggara dengan teknologi canggih dan infrastruktur yang andal.";
+        langSwitch.innerText = "🇮🇩 ID";
+      }
+
+      langID = !langID;
+    }
   </script>
 </body>
 </html>
