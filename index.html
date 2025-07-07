@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Layanan Digital</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -12,15 +13,12 @@
       box-sizing: border-box;
       font-family: 'Outfit', sans-serif;
     }
-
     body, html {
       height: 100%;
       background-color: #1e1e1e;
       color: #fff;
     }
-
     header {
-      position: relative;
       z-index: 2;
       display: flex;
       justify-content: space-between;
@@ -28,13 +26,11 @@
       padding: 20px 40px;
       background-color: #2b2b2b;
     }
-
     .logo {
       font-size: 1.5rem;
       font-weight: 800;
       color: #FFD700;
     }
-
     nav a {
       margin: 0 15px;
       text-decoration: none;
@@ -42,46 +38,96 @@
       font-weight: 500;
       transition: color 0.3s;
     }
-
     nav a:hover {
       color: #FFD700;
     }
-
     .lang-switch {
       cursor: pointer;
       background-color: #444;
       padding: 5px 10px;
       border-radius: 5px;
-      color: #fff;
       font-size: 0.9rem;
     }
-
     .hero {
-      position: relative;
-      z-index: 2;
       text-align: center;
       padding: 100px 20px;
+      z-index: 2;
+      position: relative;
     }
-
     .hero h1 {
       font-size: 3rem;
       font-weight: 900;
-      color: #fff;
     }
-
     .hero span {
       color: #FFD700;
     }
-
     .hero p {
       margin-top: 20px;
       color: #ccc;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
       font-size: 1rem;
     }
-
+    section#kontak {
+      padding: 80px 20px;
+      background-color: #2b2b2b;
+      text-align: center;
+    }
+    #kontak h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    #kontak h2 span {
+      color: #FFD700;
+    }
+    #kontak p {
+      color: #ccc;
+      margin-bottom: 50px;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .contact-card {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      padding: 30px 20px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+    .contact-card i {
+      color: #FFD700;
+      margin-bottom: 15px;
+    }
+    .contact-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .contact-card p {
+      color: #aaa;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+    .contact-card a {
+      text-decoration: none;
+      color: #FFD700;
+      font-weight: bold;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #1a1a1a;
+      font-size: 0.85rem;
+      color: #888;
+    }
     #particles-js {
       position: fixed;
       top: 0;
@@ -90,12 +136,8 @@
       height: 100%;
       z-index: 0;
     }
-
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
+      .hero h1 { font-size: 2.2rem; }
       nav {
         display: flex;
         flex-direction: column;
@@ -112,9 +154,9 @@
     <div class="logo">Kyoken ID</div>
     <nav>
       <a href="#">Beranda</a>
-      <a href="#">Tentang</a>
+      <a href="#">Trading</a>
       <a href="#">Layanan</a>
-      <a href="#">Kontak</a>
+      <a href="#kontak">Kontak</a>
     </nav>
     <div class="lang-switch" onclick="switchLang()">🇮🇩 ID</div>
   </header>
@@ -126,62 +168,75 @@
     </p>
   </section>
 
-  <!-- Particles.js library -->
+  <section id="kontak">
+    <h2>Hubungi <span>Tim Kami</span></h2>
+    <p>Kami siap membantu Anda memilih layanan terbaik atau menjawab pertanyaan seputar trading dan edukasi.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fab fa-telegram fa-2x"></i>
+        <h3>Telegram Channel</h3>
+        <p>Gabung channel publik kami untuk info dan sinyal harian.</p>
+        <a href="https://t.me/romstrader">Buka Channel</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-telegram fa-2x"></i>
+        <h3>Admin Telegram</h3>
+        <p>Hubungi admin untuk konsultasi, tanya layanan, atau diskusi cepat.</p>
+        <a href="https://t.me/Kyosih">Chat Admin</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-whatsapp fa-2x"></i>
+        <h3>WhatsApp</h3>
+        <p>Konsultasi langsung dan fast response via WA.</p>
+        <a href="https://wa.me/6287856077120">Buka WhatsApp</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-instagram fa-2x"></i>
+        <h3>Instagram</h3>
+        <p>Ikuti story dan insight harian kami.</p>
+        <a href="https://instagram.com/_rommms">Buka Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    &copy; 2025 romsstrade. All rights reserved.
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
       particles: {
         number: { value: 60 },
         color: { value: "#ffffff" },
-        shape: {
-          type: "circle",
-          stroke: { width: 0, color: "#000000" },
-        },
-        opacity: {
-          value: 0.5,
-          random: false,
-        },
-        size: {
-          value: 3,
-          random: true,
-        },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out",
-        }
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3, random: true },
+        move: { enable: true, speed: 2, out_mode: "out" }
       },
       interactivity: {
-        detect_on: "canvas",
         events: {
           onhover: { enable: true, mode: "grab" },
-          onclick: { enable: true, mode: "push" },
+          onclick: { enable: true, mode: "push" }
         },
         modes: {
           grab: { distance: 100, line_linked: { opacity: 0.5 } },
-          push: { particles_nb: 4 },
+          push: { particles_nb: 4 }
         }
       },
       retina_detect: true
     });
-  </script>
 
-  <script>
     let langID = true;
     function switchLang() {
       const desc = document.getElementById("desc");
       const langSwitch = document.querySelector(".lang-switch");
 
       if (langID) {
-        // switch to English
         document.querySelector(".hero h1").innerHTML = "<span>Comprehensive</span> Digital Services";
         desc.innerText = "Discover our modern digital solutions designed to empower developers and businesses across Southeast Asia with advanced technology and reliable infrastructure.";
         langSwitch.innerText = "🇬🇧 EN";
       } else {
-        // switch to Indonesian
         document.querySelector(".hero h1").innerHTML = "<span>Layanan Digital</span> yang Komprehensif";
         desc.innerText = "Temukan rangkaian solusi digital modern kami yang dirancang untuk memberdayakan para pengembang dan bisnis di seluruh Asia Tenggara dengan teknologi canggih dan infrastruktur yang andal.";
         langSwitch.innerText = "🇮🇩 ID";
